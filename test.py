@@ -5,7 +5,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':
-        return render_template('test.html', data="JIMMY")
+        name = request.form['name']
+        return render_template('test.html', data="name")
     else:
         return render_template('test.html')
 
